@@ -235,3 +235,39 @@ Finalmente você tem o Moodle para testes instalado em seu computador local. Nel
 **OBS**: Instalação no Servidor Final - A instalação do Moodle no seu servidor final, ou seja, http://seu_site.com é mais complicada, entretanto basta seguir os mesmos passos anteriores, apenas alterando algumas informações.
 Primeiro que a Hospedagem de Arquivos não será feita no seu computador, e sim num local na internet. Para ter acesso à esse local, recomendamos softwares de Gerenciamento de Arquivos Remotos, sendo o Filezilla para Windows e Transmitpara MAC OS. Para ter acesso à hospedagem é preciso preencher os dados de FTP, você pode ter acesso à eles com a central de atendimento do serviço contratado. Assim que realizar a conexão, você deve enviar a pasta moodle para o diretório “public_html”.
 Como os arquivos não estão mais no seu computador, o endereço localhost não será mais utilizado. O serviço de hospedagem que você contratar terá o novo endereço de Banco de Dados MySQL para que você crie a Base de Dados moodle, com login e senha próprios. Não se esqueça que, ao começar a inserir as informações no processo de instalação do Moodle, preencha as informações certas do Banco de Dados.
+
+# Habilitar acesso ao Moodle Local através de outros Computadores
+
+### Descobrir o IP do servidor
+
+No terminal do servidor (onde o XAMPP e Moodle estão instalados), rode:
+
+```bash
+ip a
+```
+
+Procure pelo IP na interface que você usa (exemplo: enp2s0 ou wlan0), algo como:
+
+`inet 10.125.1.2/24`
+
+O número antes da barra (10.125.1.2) é o IP que você vai usar.
+
+### Editar o arquivo config.php do Moodle
+Abra o arquivo config.php do Moodle, que normalmente fica em:
+
+`/opt/lampp/htdocs/moodle/config.php`
+
+edite a linha:
+
+`$CFG->wwwroot = 'http://localhost/moodle';`
+
+para:
+
+`$CFG->wwwroot = 'http://SEU_IP/moodle';`
+
+para este caso:
+
+`$CFG->wwwroot = 'http://10.125.1.2/moodle';`
+
+### Acessar o Moodle de outro computador
+No navegador do outro computador (na mesma rede), digite: http://10.125.1.2/moodle
