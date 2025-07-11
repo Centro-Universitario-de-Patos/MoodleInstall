@@ -231,6 +231,7 @@ O próximo passo é escrever no seu navegador o código http://localhost/moodle,
     9.5. Auto-registro: Desabilitar  
 
 Finalmente você tem o Moodle para testes instalado em seu computador local. Nele, você pode utilizar todas as funcionalidades da plataforma e fazer os testes necessários. Sempre que reiniciar o seu computador, não se esqueça de ligar novamente o XAMPP, iniciar o Apache e o MySQL e escrever na url http://localhost/moodle.
+
 **OBS**: Instalação no Servidor Final - A instalação do Moodle no seu servidor final, ou seja, http://seu_site.com é mais complicada, entretanto basta seguir os mesmos passos anteriores, apenas alterando algumas informações.
 Primeiro que a Hospedagem de Arquivos não será feita no seu computador, e sim num local na internet. Para ter acesso à esse local, recomendamos softwares de Gerenciamento de Arquivos Remotos, sendo o Filezilla para Windows e Transmitpara MAC OS. Para ter acesso à hospedagem é preciso preencher os dados de FTP, você pode ter acesso à eles com a central de atendimento do serviço contratado. Assim que realizar a conexão, você deve enviar a pasta moodle para o diretório “public_html”.
 Como os arquivos não estão mais no seu computador, o endereço localhost não será mais utilizado. O serviço de hospedagem que você contratar terá o novo endereço de Banco de Dados MySQL para que você crie a Base de Dados moodle, com login e senha próprios. Não se esqueça que, ao começar a inserir as informações no processo de instalação do Moodle, preencha as informações certas do Banco de Dados.
